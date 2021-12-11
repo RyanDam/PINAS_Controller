@@ -51,7 +51,7 @@ def rainbow_cycle(wait):
 
 while True:
     if current_led_mode == 0:
-        rainbow_cycle()
+        rainbow_cycle(0.001)
     elif current_led_mode == 1:
         pixels.fill((255, 0, 0))
         pixels.show()
