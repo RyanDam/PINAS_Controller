@@ -1,0 +1,16 @@
+[Unit]
+Description=PINAS Script
+Wants=network.target
+After=syslog.target network-online.target
+
+[Service]
+Type=idle
+User=pi
+PIDFile=/home/pi/PID/PINAS.pid
+ExecStart=python3 /home/pi/PINAS_Controller/main.py
+RemainAfterExit=no
+Restart=on-failure
+RestartSec=5s
+
+[Install]
+WantedBy=multi-user.target
